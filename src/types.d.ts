@@ -803,6 +803,10 @@ declare namespace bigquery {
        * [Pick one] A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation.
        */
       view?: ITableReference;
+      /**
+       * Condition that is associated with this access configuration. If the condition evaluates to true, the access level specified in this entry will be applied.
+       */
+      condition?: IExpr;
     }>;
     /**
      * [Output-only] The time when this dataset was created, in milliseconds since the epoch.
